@@ -77,13 +77,13 @@ finally:
 
 # Filter new companys
 newCompanys = list(filter(lambda name: name not in oldCompanys, names))
-message = "❌ Chưa có công ty nào được thêm vào"
+# message = "❌ Chưa có công ty nào được thêm vào"
 if len(newCompanys) > 0:
     message = "\n".join([f"📢 Có {len(newCompanys)} công ty mới được thêm vào:"] + list(map(lambda item: f"✅ {item}",newCompanys)))
     # Append new companys to file
     with open("company.txt", "a") as f:
         for name in newCompanys:
             f.write(f"{name}\n")
-sendNotification(message)
+    sendNotification(message)
 
 driver.quit()
