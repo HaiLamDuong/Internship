@@ -41,7 +41,7 @@ def getChatIDs():
     try:
         response = requests.get(UPDATE_URL)
         data = response.json().get("result", [])
-        CHAT_ID = set([item.get("message", {}).get("chat", {}).get("id", MY_ID) for item in data])
+        CHAT_ID = set([str(item.get("message", {}).get("chat", {}).get("id", MY_ID)) for item in data])
         return CHAT_ID
     except Exception as e:
         pass
