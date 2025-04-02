@@ -39,7 +39,7 @@ jobs:
           git config user.name "Duong Hai Lam"
           git config user.email "Hailam2104@users.noreply.github.com"
           if git status --porcelain | grep .; then
-            git add company.txt
+            git add .
             git commit -m "Update company.txt"
             git push
           else

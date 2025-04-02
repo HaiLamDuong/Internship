@@ -64,6 +64,7 @@ def sendDonotHaveNewCompanyNotification():
         requests.get(f"{BASE_URL}/sendMessage?chat_id={MY_ID}&{urlParams}")
     except Exception as e:
         pass
+
 # Get numbers of old companys
 try:
     f = open("numbers.txt", "r")
@@ -105,11 +106,12 @@ if len(logos) != numbers:
             "text": "\n".join([f"📢 Có {len(newCompanys)} công ty mới được thêm vào:"] + list(map(lambda item: f"✅ {item}",newCompanys)))
         }
         urlParams = urllib.parse.urlencode(params)
+
         # Append new companys to file
         with open("company.txt", "a") as f:
             for name in newCompanys:
                 f.write(f"{name}\n")
-                
+
         sendNotification(urlParams)
 else:
     sendDonotHaveNewCompanyNotification()
