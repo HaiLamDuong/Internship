@@ -3,6 +3,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 
 import requests
+import urllib.parse
 import time
 import os
 from dotenv import load_dotenv
@@ -18,7 +19,7 @@ BASE_URL = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}"
 UPDATE_URL = f"{BASE_URL}/getUpdates"
 
 # URL
-url = "https://internship.cse.hcmut.edu.vn"
+URL = "https://internship.cse.hcmut.edu.vn"
 
 # Set up webdriver
 options = Options()
@@ -46,25 +47,28 @@ def getChatIDs():
     except Exception as e:
         pass
 
-def sendNotification(message):
+def sendNotification(urlParams):
     try:
         CHAT_ID = getChatIDs()
         for ID in CHAT_ID:
-            requests.get(f"{BASE_URL}/sendMessage?chat_id={ID}&text={message}")
+            requests.get(f"{BASE_URL}/sendMessage?chat_id={ID}&{urlParams}")
     except Exception as e:
         pass
 
 def sendDonotHaveNewCompanyNotification():
     try:
-        message = "❌ Chưa có công ty nào được thêm vào"
-        requests.get(f"{BASE_URL}/sendMessage?chat_id={MY_ID}&text={message}")
+        params = {
+            "text": "❌ Chưa có công ty nào được thêm vào."
+        }
+        urlParams = urllib.parse.urlencode(params)
+        requests.get(f"{BASE_URL}/sendMessage?chat_id={MY_ID}&{urlParams}")
     except Exception as e:
         pass
-    
+
 # Open website
 names = []
 try:
-    driver.get(url)
+    driver.get(URL)
     time.sleep(2)
     logos = driver.find_elements(By.CSS_SELECTOR, "div > div.logo-box")
     names = list(map(getCompanyName, logos))
@@ -85,13 +89,16 @@ finally:
 # Filter new companys
 newCompanys = list(filter(lambda name: name not in oldCompanys, names))
 if len(newCompanys) > 0:
-    message = "\n".join([f"📢 Có {len(newCompanys)} công ty mới được thêm vào:"] + list(map(lambda item: f"✅ {item}",newCompanys)))
+    params = {
+        "text": "\n".join([f"📢 Có {len(newCompanys)} công ty mới được thêm vào:"] + list(map(lambda item: f"✅ {item}",newCompanys)))
+    }
+    urlParams = urllib.parse.urlencode(params)
     # Append new companys to file
     with open("company.txt", "a") as f:
         for name in newCompanys:
             f.write(f"{name}\n")
             
-    sendNotification(message)
+    sendNotification(urlParams)
 else:
     sendDonotHaveNewCompanyNotification()
 
