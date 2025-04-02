@@ -1,4 +1,4 @@
-# InternShip
+# Internship
 
 This is a repository that auto-crawls new companies' names from [CSE](https://internship.cse.hcmut.edu.vn/) and sends a notification via a [Telegram bot](https://t.me/CampInternshipbot).
 
