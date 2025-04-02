@@ -64,41 +64,53 @@ def sendDonotHaveNewCompanyNotification():
         requests.get(f"{BASE_URL}/sendMessage?chat_id={MY_ID}&{urlParams}")
     except Exception as e:
         pass
+# Get numbers of old companys
+try:
+    f = open("numbers.txt", "r")
+    numbers = int(f.read())
+    f.close()
+except FileNotFoundError:
+    numbers = 0
 
 # Open website
-names = []
 try:
     driver.get(URL)
     time.sleep(2)
     logos = driver.find_elements(By.CSS_SELECTOR, "div > div.logo-box")
-    names = list(map(getCompanyName, logos))
-    print(f"Hiện tại đang có {len(names)} công ty", names)
+    if len(logos) != numbers:
+        names = list(map(getCompanyName, logos))
+        print(f"Hiện tại đang có {len(names)} công ty", names)
+    else:
+        names = []
 except Exception as e:
-    pass
+    names = []
 
-oldCompanys = []
-# Read names from old file
-try:
-    f = open("company.txt", "r")
-    oldCompanys = reduce(lambda acc, curr: acc + [curr], f.read().split("\n"), oldCompanys)
-except FileNotFoundError:
-    f = open("company.txt", "x")
-finally:
-    f.close()
+if len(logos) != numbers:
+    # Write numbers of companys to file numbers.txt
+    with open("numbers.txt", "w") as f:
+        f.write(f"{len(names)}")
 
-# Filter new companys
-newCompanys = list(filter(lambda name: name not in oldCompanys, names))
-if len(newCompanys) > 0:
-    params = {
-        "text": "\n".join([f"📢 Có {len(newCompanys)} công ty mới được thêm vào:"] + list(map(lambda item: f"✅ {item}",newCompanys)))
-    }
-    urlParams = urllib.parse.urlencode(params)
-    # Append new companys to file
-    with open("company.txt", "a") as f:
-        for name in newCompanys:
-            f.write(f"{name}\n")
-            
-    sendNotification(urlParams)
+    # Read names of old companys
+    try:
+        f = open("company.txt", "r")
+        oldCompanys = reduce(lambda acc, curr: acc + [curr], f.read().split("\n"), [])
+        f.close()
+    except FileNotFoundError:
+        oldCompanys = []
+
+    # Filter new companys
+    newCompanys = list(filter(lambda name: name not in oldCompanys, names))
+    if len(newCompanys) > 0:
+        params = {
+            "text": "\n".join([f"📢 Có {len(newCompanys)} công ty mới được thêm vào:"] + list(map(lambda item: f"✅ {item}",newCompanys)))
+        }
+        urlParams = urllib.parse.urlencode(params)
+        # Append new companys to file
+        with open("company.txt", "a") as f:
+            for name in newCompanys:
+                f.write(f"{name}\n")
+                
+        sendNotification(urlParams)
 else:
     sendDonotHaveNewCompanyNotification()
 
