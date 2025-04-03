@@ -30,7 +30,7 @@ TELEGRAM_BOT_TOKEN = <token>
 # Your telegram ID
 MY_TELEGRAM_ID = <id>
 
-# Your fernet key
+# Your fernet key used for Symmetric Encryption
 FERNET_KEY = <key>
 ```
 
