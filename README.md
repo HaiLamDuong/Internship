@@ -5,7 +5,7 @@ This is a repository that auto-crawls new companies' names from [CSE](https://in
 | Status | Message Structure |
 | --- | --- |
 | Have new company | 📢 Có `<number>` công ty mới được thêm vào:<br>✅ `<name> of the first company`<br>✅ `<name> of the second company` |
-| Don't have new company | ❌ Chưa có công ty nào được thêm vào |
+| Don't have new company | ❌ Chưa có công ty nào được thêm vào (Used for owner) |
 
 # How to run it locally?
 
