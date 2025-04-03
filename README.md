@@ -23,7 +23,7 @@ cd Internship
 
 3. Create `.env` file like this
 
-```cs
+```bash
 # Your telegram bot token
 TELEGRAM_BOT_TOKEN = <token>
 
