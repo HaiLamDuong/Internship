@@ -139,6 +139,7 @@ if len(logos) != numbers:
 
         sendNotification(urlParams)
 else:
-    sendDonotHaveNewCompanyNotification()
+    # sendDonotHaveNewCompanyNotification()
+    print("❌ Chưa có công ty nào được thêm vào.")
 
 driver.quit()
