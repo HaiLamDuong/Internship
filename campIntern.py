@@ -126,6 +126,7 @@ if len(logos) != numbers:
 
     # Filter new companys
     newCompanys = list(filter(lambda name: name not in oldCompanys, names))
+    newCompanys = list(filter(lambda name: name, newCompanys) # Remove None
     if len(newCompanys) > 0:
         params = {
             "text": "\n".join([f"📢 Có {len(newCompanys)} công ty mới được thêm vào:"] + list(map(lambda item: f"✅ {item}",newCompanys)))
