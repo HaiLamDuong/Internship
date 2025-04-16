@@ -33,7 +33,7 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           MY_TELEGRAM_ID: ${{ secrets.MY_TELEGRAM_ID }}
           FERNET_KEY: ${{ secrets.FERNET_KEY }}
-        run: python campIntern.py
+        run: python intern.py
 
       - name: Update company.txt
         run: |
