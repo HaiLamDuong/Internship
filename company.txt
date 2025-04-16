@@ -1,72 +1,34 @@
-CÔNG TY TNHH MTV PHƯƠNG ĐÔNG LINH HOẠT VIỆT NAM (EAST AGILE - EA)
-CÔNG TY CỔ PHẦN R2S
-CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ VGS
-CÔNG TY TNHH OPENWAY VIỆT NAM (OW)
-CÔNG TY CỔ PHẦN TECHLAB
-CÔNG TY CP GIẢI PHÁP CÔNG NGHỆ TRUYỀN THÔNG ĐA PHƯƠNG TIỆN SÁNG KIẾN (IMT SOLUTIONS)
-CÔNG TY TNHH R&I LABS
-CÔNG TY CỔ PHẦN BEEHEXA - BEEHEXA CORP
-CÔNG TY TNHH TRUINOVATE
-CÔNG TY TNHH TECALLIANCE VIỆT NAM (TA)
-CÔNG TY TNHH GIẢI PHÁP PHẦN MỀM TƯỜNG MINH BÌNH ĐỊNH
-CÔNG TY TNHH DATALOGIC VIỆT NAM
-CÔNG TY CỔ PHẦN GIẢI PHÁP VTECH
-CÔNG TY TNHH ZIGEXN VENTURA
-TNS - NHẬT BẢN
-MOBIUS CO., LTD. (NHẬT BẢN)
-JMACSOFT CORP.
-PNH CO., LTD. (NHẬT BẢN)
-CÔNG TY CỔ PHẦN BẢN VIÊN (BV)
-SORIMACHI - NHẬT BẢN
-CÔNG TY TNHH E-CQURITY VIỆT NAM
-CÔNG TY TNHH CÔNG NGHỆ PHẦN MỀM DAYONE
-JMACSOFT CORP. (NHẬT BẢN)
-CÔNG TY CỔ PHẦN BẢN VIÊN (BAN VIEN CORPORATION)
-None
-None
-REVOBRICKS LLC
-CÔNG TY CỔ PHẦN KHOA HỌC KỸ THUẬT PHƯỢNG HẢI
-CÔNG TY TNHH HORUSOFTACEAE
-None
-CÔNG TY CỔ PHẦN SUN.STUDIO (SS)
-CÔNG TY TNHH M2 VIETNAM
-PHÒNG THÍ NGHIỆM NGHIÊN CỨU VỀ NƯỚC KHU VỰC CHÂU Á (CARE)
+Công ty TNHH HORUSOFTACEAE
+Công ty TNHH MTV Phương Đông Linh Hoạt Việt Nam (East Agile - EA)
+Công ty Cổ phần VNG - Verichains
+Khoa Khoa học và Kỹ thuật Máy tính - Trường Đại học Bách Khoa - ĐHQG TPHCM (CSE)
 HOLISTICS SOFTWARE (HS)
-CÔNG TY CỔ PHẦN VNG - VERICHAINS
+Công ty Cổ phần Bản Viên (Ban Vien Corporation)
+Công Ty Cổ Phần R2S
+CÔNG TY CỔ PHẦN SUN.STUDIO (SS)
+CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ VGS
+Công ty TNHH TecAlliance Việt Nam (TA)
 CÔNG TY TNHH ROCKSHIP (RS)
-CÔNG TY CỔ PHẦN CÔNG NGHỆ SWANTECH
-TRUNG TÂM AN TOÀN THÔNG TIN VNPT - CHI NHÁNH CÔNG TY CÔNG NGHỆ THÔNG TIN VNPT (VNPT-CI)
-None
-None
-None
-None
-None
-None
-None
-None
-None
-None
-None
-None
-None
-None
-None
-None
-None
-None
-None
-None
-None
-None
-None
-None
-None
-None
-None
-None
-None
-None
-None
-None
-None
-None
+CÔNG TY CỔ PHẦN TECHLAB
+Công ty Cổ phần Beehexa - Beehexa Corp
+Công ty TNHH M2 VIETNAM
+Công ty TNHH Giải pháp Phần mềm Tường Minh Bình Định
+Công ty TNHH OpenWay Việt Nam (OW)
+TNS - Nhật Bản
+Sorimachi - Nhật Bản
+CÔNG TY TNHH ZIGEXN VENTURA
+CÔNG TY CP GIẢI PHÁP CÔNG NGHỆ TRUYỀN THÔNG ĐA PHƯƠNG TIỆN SÁNG KIẾN (IMT SOLUTIONS)
+CÔNG TY CỔ PHẦN KHOA HỌC KỸ THUẬT PHƯỢNG HẢI
+Revobricks LLC
+CÔNG TY TNHH R&I LABS
+CÔNG TY TNHH TRUINOVATE
+CÔNG TY CỔ PHẦN GIẢI PHÁP VTECH
+CÔNG TY TNHH DATALOGIC VIỆT NAM
+CÔNG TY TNHH E-CQURITY VIỆT NAM
+JMACSOFT Corp. (Nhật Bản)
+PNH Co., Ltd. (Nhật Bản)
+MOBIUS Co., Ltd. (Nhật Bản)
+Công ty TNHH Công Nghệ Phần Mềm DayOne
+Phòng thí nghiệm nghiên cứu về nước khu vực châu Á (CARE)
+Trung tâm An toàn thông tin VNPT -  Chi nhánh Công ty Công nghệ thông tin VNPT (VNPT-CI)
+Công ty cổ phần Công nghệ Swantech
