@@ -66,7 +66,6 @@ def getChatIDs():
 def sendNotification(urlParams):
     try:
         chatIDs = getChatIDs()
-        chatIDs = [MY_ID]
         for ID in chatIDs:
             requests.get(f"{BASE_URL}/sendMessage?chat_id={ID}&{urlParams}")
     except Exception as e:
