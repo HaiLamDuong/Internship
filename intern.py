@@ -103,12 +103,17 @@ def main():
         print("Error in main:", e)
         data = []
 
-    if len(data) != numbers:
-        names = reduce(lambda acc, curr: acc + [curr.get("fullname", "None")], data, [])
+    if len(data) and len(data) != numbers:
+        infos = reduce(
+            lambda acc, curr: acc
+            + [(curr.get("_id", None), curr.get("fullname", "None"))],
+            data,
+            [],
+        )
 
         # Write numbers of companys to file numbers.txt
         with open("numbers.txt", "w") as f:
-            f.write(f"{len(names)}")
+            f.write(f"{len(infos)}")
 
         # Read names of old companys
         try:
@@ -121,7 +126,8 @@ def main():
             oldCompanys = []
 
         # Filter new companys
-        newCompanys = list(filter(lambda name: name not in oldCompanys, names))
+        newCompanys = list(filter(lambda name: name not in oldCompanys, infos))
+        newCompanys = list(map(lambda info: info[1], newCompanys))
         if len(newCompanys) > 0:
             params = {
                 "text": "\n".join(
@@ -133,8 +139,8 @@ def main():
 
             # Append new companys to file
             with open("company.txt", "a") as f:
-                for name in newCompanys:
-                    f.write(f"{name}\n")
+                for id, name in infos:
+                    f.write(f"{id}\n")
 
             sendNotification(urlParams)
     else:
