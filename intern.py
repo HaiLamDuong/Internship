@@ -23,6 +23,20 @@ URL = "https://internship.cse.hcmut.edu.vn/home/company/all"
 cipher = Fernet(FERNET_KEY)
 
 
+def functionRunTime(func):
+    def innerFunction(*args, **kargs):
+        import time
+
+        start = time.time()
+        res = func(*args, **kargs)
+        end = time.time()
+        print(f"Run time of {func.__name__} is: {end - start}")
+        return res
+
+    return innerFunction
+
+
+@functionRunTime
 def getChatIDs():
     try:
         # Get ids from ids.txt file
@@ -63,6 +77,7 @@ def getChatIDs():
         return [MY_ID]
 
 
+@functionRunTime
 def sendNotification(urlParams):
     try:
         chatIDs = getChatIDs()
@@ -72,6 +87,7 @@ def sendNotification(urlParams):
         print("Error in sendNotification:", e)
 
 
+@functionRunTime
 def sendDonotHaveNewCompanyNotification():
     try:
         params = {"text": "❌ Chưa có công ty nào được thêm vào."}
@@ -81,6 +97,7 @@ def sendDonotHaveNewCompanyNotification():
         print("Error in sendDonotHaveNewCompanyNotification:", e)
 
 
+@functionRunTime
 def getNumbersOfOldCompanys():
     # Get numbers of old companys
     try:
@@ -93,6 +110,7 @@ def getNumbersOfOldCompanys():
         return numbers
 
 
+@functionRunTime
 def main():
     numbers = getNumbersOfOldCompanys()
 
