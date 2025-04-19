@@ -25,10 +25,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Set Up Chrome
-        uses: browser-actions/setup-chrome@v1.7.3
-
-      - name: Run Selenium Script
+      - name: Run Script
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           MY_TELEGRAM_ID: ${{ secrets.MY_TELEGRAM_ID }}
