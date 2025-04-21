@@ -144,7 +144,7 @@ def main():
             oldCompanys = []
 
         # Filter new companys
-        newCompanys = list(filter(lambda name: name[0] not in oldCompanys, infos))
+        newCompanys = list(filter(lambda info: info[0] not in oldCompanys, infos))
         newCompanys = list(map(lambda info: info[1], newCompanys))
         if len(newCompanys) > 0:
             params = {
