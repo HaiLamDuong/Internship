@@ -145,19 +145,19 @@ def main():
 
         # Filter new companys
         newCompanys = list(filter(lambda info: info[0] not in oldCompanys, infos))
-        newCompanys = list(map(lambda info: info[1], newCompanys))
-        if len(newCompanys) > 0:
+        newCompanyNames = list(map(lambda info: info[1], newCompanys))
+        if len(newCompanyNames) > 0:
             params = {
                 "text": "\n".join(
                     [f"📢 Có {len(newCompanys)} công ty mới được thêm vào:"]
-                    + list(map(lambda item: f"✅ {item}", newCompanys))
+                    + list(map(lambda item: f"✅ {item}", newCompanyNames))
                 )
             }
             urlParams = urllib.parse.urlencode(params)
 
             # Append new companys to file
             with open("company.txt", "a") as f:
-                for id, name in infos:
+                for id, name in newCompanys:
                     f.write(f"{id}\n")
 
             sendNotification(urlParams)
