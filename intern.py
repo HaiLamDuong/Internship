@@ -24,11 +24,11 @@ cipher = Fernet(FERNET_KEY)
 
 
 def functionRunTime(func):
-    def innerFunction(*args, **kargs):
+    def innerFunction(*args, **kwargs):
         import time
 
         start = time.time()
-        res = func(*args, **kargs)
+        res = func(*args, **kwargs)
         end = time.time()
         print(f"Run time of {func.__name__} is: {end - start}")
         return res
