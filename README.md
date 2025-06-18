@@ -43,5 +43,5 @@ pip install -r requirements.txt
 5. Start program
 
 ```bash
-python ./campInternship.py
+python ./intern.py
 ```
